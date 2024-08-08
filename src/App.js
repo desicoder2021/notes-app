@@ -7,11 +7,15 @@ import NotePage from "./pages/NotePage";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<NotesPage />} />
-        <Route path='/note/:id' element={<NotePage />} />
-      </Routes>
+      <div className='container dark'>
+        <div className='app'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<NotesPage />} />
+            <Route path='/note/:id' element={<NotePage />} />
+          </Routes>
+        </div>
+      </div>
     </BrowserRouter>
   );
 }

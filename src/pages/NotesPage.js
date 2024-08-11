@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import notes from "../assets/data";
 import ListItem from "../components/ListItem";
+import AddButton from "../components/AddButton";
 
 const NotesPage = () => {
   const [notes, setNotes] = useState([]);
@@ -11,7 +12,6 @@ const NotesPage = () => {
   const getNotes = async () => {
     let response = await fetch("http://127.0.0.1:5000/notes");
     let data = await response.json();
-    console.log("data", data);
     setNotes(data);
   };
 
@@ -26,6 +26,7 @@ const NotesPage = () => {
           <ListItem key={i} note={note} />
         ))}
       </div>
+      <AddButton />
     </div>
   );
 };
